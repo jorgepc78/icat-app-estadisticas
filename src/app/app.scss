@@ -14,3 +14,36 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+ion-content {
+  background-color: #dedede !important;
+}
+
+ion-note {
+  color: #000 !important;
+}
+.fondo_card {
+    background-image: url('../assets/images/fondo_card.png') !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right bottom;
+}
+.fondo_card2 {
+    background-image: url('../assets/images/fondo_card.png') !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right bottom;
+}
+
+.fondo-footer-card {
+  background-color: #8CB235 !important;
+}
+
+.icono-tarjeta-detalle {
+  margin: 0 0 15px 0;
+  font-size: 1.8em;  
+}
+
+.toolbar-ios ion-title {
+  padding: 0 60px 1px !important;
+}

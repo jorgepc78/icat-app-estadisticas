@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="icat">
+    <ion-title>Certificaciones</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar color="icat">
+    <ion-title><span style="font-size: 14px;">Corte al: {{fecha}}</span></ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+    <p *ngIf="!listaValidacionesUnidad">No hay conexi&oacute;n con el servidor de datos</p>
+    <ion-card *ngFor="let detalleUnidad of listaValidacionesUnidad" class="fondo_card">
+      <ion-card-header>
+        <h2>{{detalleUnidad.unidad}}</h2>
+      </ion-card-header>
+
+      <ion-card-content>
+
+          <ion-grid>
+            <ion-row justify-content-center>
+              <ion-col text-center col-4>
+                <ion-icon name='bookmark' class="icono-tarjeta-detalle"></ion-icon>
+                <h1>{{detalleUnidad.roco | number:0}}</h1>
+                <h2>ROCO</h2>
+              </ion-col>
+              <ion-col text-center col-4>
+                <ion-icon name='document' class="icono-tarjeta-detalle"></ion-icon>
+                <h1>{{detalleUnidad.masaje | number:0}}</h1>
+                <h2>Masajes</h2>
+              </ion-col>
+              <ion-col text-center col-4>
+                <ion-icon name='medal' class="icono-tarjeta-detalle"></ion-icon>
+                <h1>{{detalleUnidad.estandar | number:0}}</h1>
+                <h2>&Eacute;standar</h2>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          
+      </ion-card-content>
+
+      <ion-item actions class="fondo-footer-card">
+        <button ion-button color="icat_cafe" item-right icon-right (click)="verDetalle(detalleUnidad)" *ngIf="(detalleUnidad.idUnidadAdmtva > 0)">
+          Ver desglose
+          <ion-icon name='arrow-forward'></ion-icon>
+        </button>
+      </ion-item>
+
+    </ion-card>
+
+</ion-content>
